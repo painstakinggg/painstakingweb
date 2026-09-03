@@ -17,23 +17,17 @@ const NAV_LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
-const MENU_LINKS = [
-  { href: "#home", label: "Home", external: false },
-  { href: "#services", label: "Services", external: false },
-  { href: "#projects", label: "Projects", external: false },
-  { href: "#about", label: "About", external: false },
-  { href: "#contact", label: "Contact", external: false },
-  {
-    href: "https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2",
-    label: "Instagram",
-    external: true,
-  },
-  {
-    href: "https://wa.me/2348107348296",
-    label: "WhatsApp",
-    external: true,
-  },
+const INTERNAL_MENU_LINKS = [
+  { href: "#home", label: "Home" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
 ];
+
+const INSTAGRAM_URL =
+  "https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2";
+const WHATSAPP_URL = "https://wa.me/2348107348296";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -91,33 +85,20 @@ export function SiteHeader() {
             sideOffset={8}
             className="w-52 border-border bg-card text-foreground shadow-lg"
           >
-            {MENU_LINKS.map((link) =>
-              link.external ? (
-                <DropdownMenuItem key={link.href} asChild>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
-                  >
-                    {link.label}
-                  </a>
-                </DropdownMenuItem>
-              ) : (
-                <DropdownMenuItem key={link.href} asChild>
-                  <a
-                    href={link.href}
-                    className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
-                  >
-                    {link.label}
-                  </a>
-                </DropdownMenuItem>
-              )
-            )}
+            {INTERNAL_MENU_LINKS.map((link) => (
+              <DropdownMenuItem key={link.href} asChild>
+                <a
+                  href={link.href}
+                  className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
+                >
+                  {link.label}
+                </a>
+              </DropdownMenuItem>
+            ))}
             <DropdownMenuSeparator className="bg-border" />
             <DropdownMenuItem asChild>
               <a
-                href="https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
@@ -127,7 +108,7 @@ export function SiteHeader() {
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <a
-                href="https://wa.me/2348107348296"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
