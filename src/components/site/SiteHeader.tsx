@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { MoreVertical } from "lucide-react";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const NAV_LINKS = [
   { href: "#services", label: "Services" },
@@ -7,6 +15,24 @@ const NAV_LINKS = [
   { href: "#about", label: "About" },
   { href: "#pricing", label: "Pricing" },
   { href: "#contact", label: "Contact" },
+];
+
+const MENU_LINKS = [
+  { href: "#home", label: "Home", external: false },
+  { href: "#services", label: "Services", external: false },
+  { href: "#projects", label: "Projects", external: false },
+  { href: "#about", label: "About", external: false },
+  { href: "#contact", label: "Contact", external: false },
+  {
+    href: "https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2",
+    label: "Instagram",
+    external: true,
+  },
+  {
+    href: "https://wa.me/2348107348296",
+    label: "WhatsApp",
+    external: true,
+  },
 ];
 
 export function SiteHeader() {
@@ -48,31 +74,70 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-md border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary md:hidden"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
-      </div>
-
-      {open && (
-        <nav className="border-t border-border bg-background/95 px-6 pb-4 md:hidden">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-border/60 py-3 text-sm text-muted-foreground transition-colors last:border-b-0 hover:text-primary"
+        <DropdownMenu open={open} onOpenChange={setOpen}>
+          <DropdownMenuTrigger asChild>
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-haspopup="menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=open]:border-primary data-[state=open]:text-primary"
             >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+              <MoreVertical className="size-5" aria-hidden="true" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
+            side="bottom"
+            align="end"
+            sideOffset={8}
+            className="w-52 border-border bg-card text-foreground shadow-lg"
+          >
+            {MENU_LINKS.map((link) =>
+              link.external ? (
+                <DropdownMenuItem key={link.href} asChild>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
+                  >
+                    {link.label}
+                  </a>
+                </DropdownMenuItem>
+              ) : (
+                <DropdownMenuItem key={link.href} asChild>
+                  <a
+                    href={link.href}
+                    className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
+                  >
+                    {link.label}
+                  </a>
+                </DropdownMenuItem>
+              )
+            )}
+            <DropdownMenuSeparator className="bg-border" />
+            <DropdownMenuItem asChild>
+              <a
+                href="https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
+              >
+                Instagram
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a
+                href="https://wa.me/2348107348296"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-muted-foreground hover:text-primary focus:text-primary-foreground"
+              >
+                WhatsApp
+              </a>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </header>
   );
 }
