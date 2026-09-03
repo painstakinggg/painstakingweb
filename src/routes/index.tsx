@@ -273,11 +273,34 @@ function Index() {
                 Have a project in mind? Fill out the form or reach out directly to start
                 discussing your project scope and timelines.
               </p>
-              <div className="mt-8 space-y-1">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="https://wa.me/2348107348296"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat on WhatsApp with Painstaking Web Development"
+                  className={btnPrimary}
+                >
+                  Chat on WhatsApp
+                </a>
+                <a
+                  href="mailto:iagboola10@gmail.com"
+                  aria-label="Send an email to Painstaking Web Development"
+                  className={btnSecondary}
+                >
+                  Send Email
+                </a>
+              </div>
+              <div className="mt-6 space-y-1 text-sm text-muted-foreground">
                 <p>
                   <strong className="text-heading">WhatsApp:</strong>{" "}
-                  <a href="tel:08107348296" className="text-primary hover:underline">
-                    08107348296
+                  <a
+                    href="https://wa.me/2348107348296"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    +234 810 734 8296
                   </a>
                 </p>
                 <p>
