@@ -146,7 +146,7 @@ function Index() {
               </h3>
               <p className="text-sm text-muted-foreground">{service.summary}</p>
               <Link
-                to={service.to}
+                to={service.to as never}
                 className="mt-4 inline-flex items-center gap-1 text-sm text-primary hover:underline"
               >
                 Learn more <ArrowRight className="size-3.5" aria-hidden="true" />

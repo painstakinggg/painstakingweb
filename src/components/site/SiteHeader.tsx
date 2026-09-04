@@ -43,7 +43,7 @@ export function SiteHeader() {
           {PRIMARY_NAV.map((link) => (
             <Link
               key={link.to}
-              to={link.to}
+              to={link.to as never}
               activeProps={{ className: "text-primary" }}
               inactiveProps={{ className: "text-muted-foreground" }}
               className="rounded-md px-3 py-2 text-sm transition-colors hover:text-primary"
@@ -83,7 +83,7 @@ export function SiteHeader() {
                 {NAV_ITEMS.map((link) => (
                   <Link
                     key={link.to}
-                    to={link.to}
+                    to={link.to as never}
                     onClick={() => setOpen(false)}
                     activeOptions={{ exact: link.to === "/" }}
                     activeProps={{ className: "border-primary text-primary" }}

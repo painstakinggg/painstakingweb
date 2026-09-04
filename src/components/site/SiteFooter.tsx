@@ -22,7 +22,7 @@ export function SiteFooter() {
             {NAV_ITEMS.map((item) => (
               <li key={item.to}>
                 <Link
-                  to={item.to}
+                  to={item.to as never}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   {item.label}
@@ -38,7 +38,7 @@ export function SiteFooter() {
             {SERVICES.map((service) => (
               <li key={service.slug}>
                 <Link
-                  to={service.to}
+                  to={service.to as never}
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   {service.title}

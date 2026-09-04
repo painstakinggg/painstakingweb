@@ -99,7 +99,7 @@ function Services() {
                 </ul>
                 {service.to !== "/services" && (
                   <Link
-                    to={service.to}
+                    to={service.to as never}
                     className="mt-4 inline-flex items-center gap-1 text-sm text-primary hover:underline"
                   >
                     Explore this service{" "}
