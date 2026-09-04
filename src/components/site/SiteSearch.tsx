@@ -107,7 +107,7 @@ export function SiteSearch({
       window.open(entry.href, "_blank", "noopener,noreferrer");
       return;
     }
-    if (entry.to) navigate({ to: entry.to });
+    if (entry.to) navigate({ to: entry.to as never });
   };
 
   return (
@@ -120,7 +120,7 @@ export function SiteSearch({
           className={`flex w-full items-center gap-2 truncate rounded bg-background px-3 py-1.5 text-left text-xs text-muted-foreground transition-colors hover:text-primary ${className}`}
         >
           <Search className="size-3.5 shrink-0" aria-hidden="true" />
-          <span className="truncate">Search painstaking.dev — pages, services, work…</span>
+          <span className="truncate">Search this site — pages, services, work…</span>
         </button>
       ) : (
         <button
