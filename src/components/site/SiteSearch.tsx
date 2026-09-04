@@ -137,12 +137,7 @@ export function SiteSearch({
         </button>
       )}
 
-      <CommandDialog
-        open={open}
-        onOpenChange={setOpen}
-        title="Search the site"
-        description="Find pages, services, projects and answers"
-      >
+      <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Search pages, services, work and FAQs…" />
         <CommandList>
           <CommandEmpty>No matches found.</CommandEmpty>
