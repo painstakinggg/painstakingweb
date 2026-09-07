@@ -133,8 +133,8 @@
 /* ---------- premium motion + surface utilities ---------- */
 
 @theme inline {
-  --shadow-glow: 0 12px 40px -16px oklch(0.6231 0.188 259.81 / 0.55);
-  --shadow-card: 0 18px 45px -30px oklch(0 0 0 / 0.9);
+  --shadow-glow: 0 12px 40px -16px rgba(59, 130, 246, 0.55);
+  --shadow-card: 0 18px 45px -30px rgba(0, 0, 0, 0.9);
 }
 
 @utility hero-glow {
@@ -143,30 +143,14 @@
   height: 32rem;
   pointer-events: none;
   background:
-    radial-gradient(
-      45% 45% at 20% 40%,
-      color-mix(in oklab, var(--color-primary) 22%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      40% 40% at 80% 20%,
-      color-mix(in oklab, var(--color-primary) 12%, transparent),
-      transparent 70%
-    );
+    radial-gradient(45% 45% at 20% 40%, rgba(59, 130, 246, 0.22), transparent 70%),
+    radial-gradient(40% 40% at 80% 20%, rgba(59, 130, 246, 0.12), transparent 70%);
 }
 
 @utility grid-lines {
   background-image:
-    linear-gradient(
-      to right,
-      color-mix(in oklab, var(--color-border) 70%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--color-border) 70%, transparent) 1px,
-      transparent 1px
-    );
+    linear-gradient(to right, rgba(35, 42, 54, 0.7) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 42, 54, 0.7) 1px, transparent 1px);
   background-size: 3rem 3rem;
 }
 
