@@ -45,8 +45,8 @@
   --color-dot-green: var(--dot-green);
   --font-sans: var(--font-main);
   --font-mono: var(--font-code);
-  --shadow-mockup: 0 20px 40px oklch(0 0 0 / 0.4);
-  --shadow-header: 0 10px 30px -10px oklch(0 0 0 / 0.8);
+  --shadow-mockup: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-header: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
   --container-site: 1200px;
 }
 
@@ -57,47 +57,38 @@
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* #0a0c10 */
-  --background: oklch(0.154 0.0092 264.28);
-  /* #f3f4f6 */
-  --foreground: oklch(0.967 0.0029 264.54);
-  /* #12161f */
-  --card: oklch(0.2004 0.0192 266.02);
-  --card-foreground: oklch(0.967 0.0029 264.54);
-  /* #1a202c */
-  --card-hover: oklch(0.2433 0.0247 263.95);
-  /* #181d28 */
-  --surface: oklch(0.2309 0.0227 265.62);
-  --popover: oklch(0.2004 0.0192 266.02);
-  --popover-foreground: oklch(0.967 0.0029 264.54);
-  /* #3b82f6 */
-  --primary: oklch(0.6231 0.188 259.81);
-  --primary-foreground: oklch(1 0 0);
-  /* #2563eb */
-  --primary-hover: oklch(0.5461 0.2152 262.88);
-  --secondary: oklch(0.2004 0.0192 266.02);
-  --secondary-foreground: oklch(0.967 0.0029 264.54);
-  --muted: oklch(0.2309 0.0227 265.62);
-  /* #9ca3af */
-  --muted-foreground: oklch(0.7137 0.0192 261.32);
-  --accent: oklch(0.6231 0.188 259.81);
-  --accent-foreground: oklch(1 0 0);
-  /* #ef4444 */
-  --destructive: oklch(0.6368 0.2078 25.33);
-  --destructive-foreground: oklch(1 0 0);
-  /* #232a36 */
-  --border: oklch(0.2836 0.0243 261.13);
-  --input: oklch(0.2836 0.0243 261.13);
-  --ring: oklch(0.6231 0.188 259.81);
-  /* #ffffff */
-  --heading: oklch(1 0 0);
-  /* #a7f3d0 */
-  --code: oklch(0.9049 0.0895 164.15);
-  --dot-red: oklch(0.6368 0.2078 25.33);
-  /* #f59e0b */
-  --dot-yellow: oklch(0.7686 0.1647 70.08);
-  /* #10b981 */
-  --dot-green: oklch(0.6959 0.1491 162.48);
+  /*
+   * Colors are declared as hex (sRGB) rather than oklch so that older mobile
+   * Chromium builds (Samsung Internet / Android WebView) render the palette
+   * instead of dropping every color. Same values as the original site.
+   */
+  --background: #0a0c10;
+  --foreground: #f3f4f6;
+  --card: #12161f;
+  --card-foreground: #f3f4f6;
+  --card-hover: #1a202c;
+  --surface: #181d28;
+  --popover: #12161f;
+  --popover-foreground: #f3f4f6;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2563eb;
+  --secondary: #12161f;
+  --secondary-foreground: #f3f4f6;
+  --muted: #181d28;
+  --muted-foreground: #9ca3af;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #232a36;
+  --input: #232a36;
+  --ring: #3b82f6;
+  --heading: #ffffff;
+  --code: #a7f3d0;
+  --dot-red: #ef4444;
+  --dot-yellow: #f59e0b;
+  --dot-green: #10b981;
 }
 
 @layer base {
@@ -142,8 +133,8 @@
 /* ---------- premium motion + surface utilities ---------- */
 
 @theme inline {
-  --shadow-glow: 0 12px 40px -16px oklch(0.6231 0.188 259.81 / 0.55);
-  --shadow-card: 0 18px 45px -30px oklch(0 0 0 / 0.9);
+  --shadow-glow: 0 12px 40px -16px rgba(59, 130, 246, 0.55);
+  --shadow-card: 0 18px 45px -30px rgba(0, 0, 0, 0.9);
 }
 
 @utility hero-glow {
@@ -152,30 +143,14 @@
   height: 32rem;
   pointer-events: none;
   background:
-    radial-gradient(
-      45% 45% at 20% 40%,
-      color-mix(in oklab, var(--color-primary) 22%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      40% 40% at 80% 20%,
-      color-mix(in oklab, var(--color-primary) 12%, transparent),
-      transparent 70%
-    );
+    radial-gradient(45% 45% at 20% 40%, rgba(59, 130, 246, 0.22), transparent 70%),
+    radial-gradient(40% 40% at 80% 20%, rgba(59, 130, 246, 0.12), transparent 70%);
 }
 
 @utility grid-lines {
   background-image:
-    linear-gradient(
-      to right,
-      color-mix(in oklab, var(--color-border) 70%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--color-border) 70%, transparent) 1px,
-      transparent 1px
-    );
+    linear-gradient(to right, rgba(35, 42, 54, 0.7) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 42, 54, 0.7) 1px, transparent 1px);
   background-size: 3rem 3rem;
 }
 
