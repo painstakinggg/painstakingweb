@@ -63,7 +63,7 @@ function Index() {
           <div>
             <span className="section-tag animate-fade-up">Web Development Studio</span>
             <h1 className="animate-fade-up mb-5 text-4xl leading-[1.12] font-bold text-heading sm:text-5xl lg:text-6xl">
-              Modern websites.
+              Modern websites.{" "}
               <br />
               <span className="text-primary">Built for business.</span>
             </h1>
