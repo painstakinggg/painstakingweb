@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { CONTACT, PROCESS } from "@/lib/site-data";
-import { btnPrimary, btnSecondary } from "@/lib/ui-classes";
+
 import { pageMeta } from "@/lib/seo";
 
 const TITLE = "Contact — Start a Project | Painstaking Web Development";
