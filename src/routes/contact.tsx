@@ -24,26 +24,6 @@ function Contact() {
         tag="Let's Talk"
         title="Ready to build your"
         highlight="online presence?"
-        actions={
-          <>
-            <a
-              href={CONTACT.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp with Painstaking Web Development"
-              className={btnPrimary}
-            >
-              Chat on WhatsApp
-            </a>
-            <a
-              href={CONTACT.emailUrl}
-              aria-label="Send an email to Painstaking Web Development"
-              className={btnSecondary}
-            >
-              Send Email
-            </a>
-          </>
-        }
       >
         <p>
           Share your project details below and we will reply with next steps, scope
