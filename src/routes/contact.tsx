@@ -5,7 +5,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { CONTACT, PROCESS } from "@/lib/site-data";
-import { btnPrimary, btnSecondary } from "@/lib/ui-classes";
+
 import { pageMeta } from "@/lib/seo";
 
 const TITLE = "Contact — Start a Project | Painstaking Web Development";
@@ -24,26 +24,6 @@ function Contact() {
         tag="Let's Talk"
         title="Ready to build your"
         highlight="online presence?"
-        actions={
-          <>
-            <a
-              href={CONTACT.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp with Painstaking Web Development"
-              className={btnPrimary}
-            >
-              Chat on WhatsApp
-            </a>
-            <a
-              href={CONTACT.emailUrl}
-              aria-label="Send an email to Painstaking Web Development"
-              className={btnSecondary}
-            >
-              Send Email
-            </a>
-          </>
-        }
       >
         <p>
           Share your project details below and we will reply with next steps, scope
