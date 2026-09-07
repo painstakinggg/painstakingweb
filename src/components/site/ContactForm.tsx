@@ -15,8 +15,8 @@ export function ContactForm() {
     business: "",
     email: "",
     whatsapp: "",
-    service: SERVICES[0].title,
-    budget: PLANS[0].name,
+    service: SERVICES[0]?.title ?? "",
+    budget: PLANS[0]?.name ?? "",
     timeline: "",
     details: "",
   });
