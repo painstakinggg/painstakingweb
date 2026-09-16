@@ -25,6 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
   { to: "/process", label: "Our Process" },
   { to: "/faq", label: "FAQ" },
   { to: "/contact", label: "Contact" },
+  { to: "/creative-prompts", label: "AI Creative Prompts" },
 ];
 
 /** Compact set used in the desktop bar; the rest live in the menu. */
@@ -124,7 +125,269 @@ export const SERVICES: Service[] = [
       "Priority support",
     ],
   },
+  {
+    slug: "website-redesign",
+    to: "/services",
+    title: "Website Redesign & Improvement",
+    summary:
+      "Focused improvements for outdated websites that need clearer messaging, stronger usability or a more credible presentation.",
+    points: [
+      "Design and content review",
+      "Mobile usability improvements",
+      "Conversion path refinement",
+      "Performance recommendations",
+    ],
+  },
+  {
+    slug: "digital-presence",
+    to: "/services",
+    title: "Business Digital Presence Setup",
+    summary:
+      "Practical support aligning your website, contact channels and core business information into one consistent online presence.",
+    points: [
+      "Online presence review",
+      "Contact channel setup",
+      "Brand consistency guidance",
+      "Website and social alignment",
+    ],
+  },
+  {
+    slug: "conversion-improvements",
+    to: "/services",
+    title: "Conversion-Focused Improvements",
+    summary:
+      "Page, message and call-to-action improvements designed to make the next step clearer for visitors.",
+    points: [
+      "Call-to-action review",
+      "Landing page improvements",
+      "Offer presentation",
+      "Enquiry flow refinement",
+    ],
+  },
+  {
+    slug: "ai-creative-support",
+    to: "/creative-prompts",
+    title: "AI Creative & Marketing Support",
+    summary:
+      "Professional creative support for advertisement concepts, social content, captions, short-form scripts and promotional direction.",
+    points: [
+      "Advertisement concepts",
+      "Social content ideas",
+      "Ad copy and captions",
+      "Video concepts and hooks",
+    ],
+  },
+  {
+    slug: "marketing-creative",
+    to: "/services",
+    title: "Marketing Creative Support",
+    summary:
+      "Campaign ideas and creative assets that help businesses promote their offers without claiming paid campaign management.",
+    points: [
+      "Campaign concept support",
+      "Promotional messaging",
+      "Content direction",
+      "Creative asset planning",
+    ],
+  },
 ];
+
+export const GROWTH_AREAS = [
+  {
+    title: "Build the foundation",
+    body: "Website development, redesigns and focused landing pages give your business a credible place to convert attention into action.",
+  },
+  {
+    title: "Strengthen the presence",
+    body: "SEO foundations, performance work, maintenance and consistent digital touchpoints help that foundation stay useful.",
+  },
+  {
+    title: "Support the promotion",
+    body: "Creative concepts, campaign messaging and social content direction help you communicate the offer beyond the website.",
+  },
+] as const;
+
+export const CREATIVE_CAPABILITIES = [
+  "Advertisement concepts",
+  "Social media content ideas",
+  "Ad copy and captions",
+  "Short-form video concepts and scripts",
+  "Product and business promotional concepts",
+  "Marketing creative direction",
+] as const;
+
+export type PromptCategory =
+  | "Website Advertising"
+  | "Social Media Content"
+  | "Business Marketing"
+  | "Product Advertising"
+  | "Promotional Campaigns"
+  | "Content Ideas"
+  | "Ad Scripts & Hooks";
+
+export type CreativePrompt = {
+  id: string;
+  category: PromptCategory;
+  title: string;
+  description: string;
+  prompt: string;
+  keywords: string[];
+};
+
+export const CREATIVE_PROMPTS: CreativePrompt[] = [
+  {
+    id: "website-value-ad",
+    category: "Website Advertising",
+    title: "Website value advertisement",
+    description: "Turn a website service into a clear, benefit-led advertisement concept.",
+    prompt:
+      "Create three advertisement concepts for a [business type] website service. Focus on the cost of an unclear or outdated online presence, the business outcome a better website supports, and one direct call to action. Keep every claim realistic and write for [target customer].",
+    keywords: ["website", "advertisement", "service", "conversion"],
+  },
+  {
+    id: "landing-page-campaign",
+    category: "Website Advertising",
+    title: "Landing page campaign angle",
+    description: "Develop campaign angles that lead naturally into a focused landing page.",
+    prompt:
+      "Develop five campaign angles for a landing page promoting [offer]. For each angle, provide a headline, supporting promise, proof to request from the business, and a call to action. Do not invent statistics, guarantees or customer results.",
+    keywords: ["landing page", "campaign", "headline", "cta"],
+  },
+  {
+    id: "weekly-social-plan",
+    category: "Social Media Content",
+    title: "One-week social content plan",
+    description: "Build a balanced week of useful, promotional and trust-building posts.",
+    prompt:
+      "Create a seven-day social content plan for [business type] serving [audience]. Balance education, behind-the-scenes, offer awareness and conversation starters. For each post include the format, concept, caption direction and a gentle call to action.",
+    keywords: ["social media", "content plan", "captions", "weekly"],
+  },
+  {
+    id: "caption-variations",
+    category: "Social Media Content",
+    title: "Caption variations by tone",
+    description: "Explore useful caption directions without losing the brand voice.",
+    prompt:
+      "Write four caption variations for [post topic] from a [business type]. Use these tones: direct, educational, conversational and premium. Keep the core facts unchanged, avoid hype and end each with an appropriate next step.",
+    keywords: ["caption", "tone", "social", "brand voice"],
+  },
+  {
+    id: "marketing-message-map",
+    category: "Business Marketing",
+    title: "Business message map",
+    description: "Clarify the audience, problem, value and proof behind an offer.",
+    prompt:
+      "Create a concise marketing message map for [business] and its [offer]. Organise it into target audience, customer problem, practical value, differentiators, proof the business should gather, objections and calls to action. Flag any missing information instead of inventing it.",
+    keywords: ["business", "message", "audience", "positioning"],
+  },
+  {
+    id: "digital-presence-review",
+    category: "Business Marketing",
+    title: "Digital presence review checklist",
+    description: "Generate a practical review across website and social touchpoints.",
+    prompt:
+      "Create a digital presence review checklist for a [business type]. Cover website clarity, contact information, offer consistency, mobile experience, trust signals, social profile consistency and calls to action. Prioritise fixes as urgent, useful and later.",
+    keywords: ["digital presence", "review", "website", "social"],
+  },
+  {
+    id: "product-benefit-angles",
+    category: "Product Advertising",
+    title: "Product benefit angles",
+    description: "Translate product details into grounded advertising angles.",
+    prompt:
+      "Using only these verified product details: [details], create five advertising angles for [audience]. For each, provide the customer situation, product benefit, visual direction and short headline. Do not invent features, discounts or results.",
+    keywords: ["product", "benefits", "advertising", "visual"],
+  },
+  {
+    id: "product-launch-content",
+    category: "Product Advertising",
+    title: "Product launch content sequence",
+    description: "Plan a simple pre-launch, launch and follow-up sequence.",
+    prompt:
+      "Plan a five-part content sequence for launching [product]. Include curiosity, education, product reveal, objection handling and follow-up. Give each part a content format, key message and call to action based only on the supplied product facts.",
+    keywords: ["product launch", "sequence", "promotion", "content"],
+  },
+  {
+    id: "promotion-campaign-framework",
+    category: "Promotional Campaigns",
+    title: "Promotional campaign framework",
+    description: "Structure a promotion across website and social content.",
+    prompt:
+      "Create a practical promotional campaign framework for [offer] running from [dates]. Include the campaign idea, audience, key message, website update, three social concepts, creative asset list and measurement suggestions. Do not assume paid advertising is being managed.",
+    keywords: ["promotion", "campaign", "creative assets", "website"],
+  },
+  {
+    id: "seasonal-promotion",
+    category: "Promotional Campaigns",
+    title: "Seasonal promotion concepts",
+    description: "Find relevant promotional ideas without relying on generic discounts.",
+    prompt:
+      "Generate six seasonal promotion concepts for [business type] around [season or event]. Include non-discount ideas such as bundles, education, limited availability or added value. Explain why each concept fits the audience and what creative assets it needs.",
+    keywords: ["seasonal", "promotion", "campaign", "offer"],
+  },
+  {
+    id: "content-pillars",
+    category: "Content Ideas",
+    title: "Business content pillars",
+    description: "Create repeatable themes that make content planning easier.",
+    prompt:
+      "Define five useful content pillars for [business type] serving [audience]. For each pillar, explain its purpose and provide five specific post ideas. Balance expertise, trust, customer questions, process and offer awareness.",
+    keywords: ["content ideas", "pillars", "planning", "business"],
+  },
+  {
+    id: "faq-content-bank",
+    category: "Content Ideas",
+    title: "Customer-question content bank",
+    description: "Turn real customer questions into educational content ideas.",
+    prompt:
+      "Turn these customer questions into a content bank: [questions]. For each question, suggest a short post, a longer educational post and a short video concept. Keep answers within the business's verified expertise and identify where facts are still needed.",
+    keywords: ["faq", "customer questions", "education", "video"],
+  },
+  {
+    id: "short-video-hooks",
+    category: "Ad Scripts & Hooks",
+    title: "Short-form video hooks",
+    description: "Generate grounded hooks and concise script structures for an offer.",
+    prompt:
+      "Write eight short-form video hooks for [offer] aimed at [audience]. Then expand the strongest three into 20-second scripts with hook, problem, useful insight, offer connection and call to action. Avoid exaggerated promises and unsupported claims.",
+    keywords: ["video", "hooks", "script", "advertisement"],
+  },
+  {
+    id: "problem-solution-script",
+    category: "Ad Scripts & Hooks",
+    title: "Problem-to-solution ad script",
+    description: "Frame a business problem and a credible next step in a short script.",
+    prompt:
+      "Create three 30-second problem-to-solution ad scripts for [business offer]. Each script should open with a recognisable customer situation, explain the practical consequence, introduce the offer without hype, and close with a clear next step.",
+    keywords: ["ad script", "problem solution", "hook", "cta"],
+  },
+];
+
+export const PROMPT_CATEGORIES = [
+  "All",
+  "Website Advertising",
+  "Social Media Content",
+  "Business Marketing",
+  "Product Advertising",
+  "Promotional Campaigns",
+  "Content Ideas",
+  "Ad Scripts & Hooks",
+] as const;
+
+export const DIGITAL_RESOURCES = [
+  {
+    title: "Industry Prompt Packs",
+    body: "Curated prompt collections for recurring business marketing and content tasks.",
+  },
+  {
+    title: "Campaign Planning Templates",
+    body: "Simple planning resources for offers, launches and promotional content.",
+  },
+  {
+    title: "Business Website Resources",
+    body: "Practical checklists and templates for clearer, conversion-focused business websites.",
+  },
+] as const;
 
 export type Project = {
   title: string;
