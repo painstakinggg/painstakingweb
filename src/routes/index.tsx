@@ -70,21 +70,31 @@ function Index() {
         <div className="hero-glow" aria-hidden="true" />
         <div className="site-section relative grid items-center gap-12 pt-14 md:min-h-[78vh] md:grid-cols-2">
           <div>
-            <span className="section-tag animate-fade-up">Web Development Studio</span>
+            <span className="section-tag animate-fade-up">
+              Web Development & Digital Growth Studio
+            </span>
             <h1 className="animate-fade-up mb-5 text-4xl leading-[1.12] font-bold text-heading sm:text-5xl lg:text-6xl">
               Modern websites.{" "}
               <br />
-              <span className="text-primary">Built for business.</span>
+              <span className="text-primary">Stronger digital presence.</span>
             </h1>
             <p className="animate-fade-up-slow mb-8 max-w-xl text-lg text-muted-foreground">
               {DESCRIPTION}
             </p>
             <div className="animate-fade-up-slow flex flex-wrap gap-4">
               <Link to="/contact" className={btnPrimary}>
-                Start a Project
+                Start a Website Project
               </Link>
-              <Link to="/portfolio" className={btnSecondary}>
-                View Our Work
+              <Link to="/creative-prompts" className={btnSecondary}>
+                Explore AI Creative Prompts
+              </Link>
+            </div>
+            <div className="animate-fade-up-slow mt-4 flex flex-wrap gap-4 text-sm">
+              <Link to="/services" className="text-primary hover:underline">
+                Get creative & marketing support
+              </Link>
+              <Link to="/portfolio" className="text-primary hover:underline">
+                View our work
               </Link>
             </div>
 
