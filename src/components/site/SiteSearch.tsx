@@ -10,7 +10,14 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { CONTACT, FAQS, NAV_ITEMS, PROJECTS, SERVICES } from "@/lib/site-data";
+import {
+  CONTACT,
+  CREATIVE_PROMPTS,
+  FAQS,
+  NAV_ITEMS,
+  PROJECTS,
+  SERVICES,
+} from "@/lib/site-data";
 
 type Entry = {
   group: string;
