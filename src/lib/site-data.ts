@@ -36,6 +36,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { to: "/pricing", label: "Pricing" },
   { to: "/process", label: "Process" },
   { to: "/faq", label: "FAQ" },
+  { to: "/creative-prompts", label: "AI Prompts" },
 ];
 
 export type Service = {
