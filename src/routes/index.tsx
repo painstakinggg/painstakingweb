@@ -153,8 +153,8 @@ function Index() {
             Websites designed around <span className="text-primary">your goals.</span>
           </h2>
           <p className="max-w-2xl text-muted-foreground">
-            From a focused business site to a full store or custom application — each
-            service is scoped to the outcome you need.
+            From a focused business site to a full store, plus the creative and marketing
+            support around it — each service is scoped to the outcome you need.
           </p>
         </Reveal>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
