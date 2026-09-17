@@ -173,6 +173,80 @@ function Index() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="mt-8">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+          >
+            See every service <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* Digital growth */}
+      <section className="border-y border-border bg-surface/40">
+        <div className="site-section">
+          <Reveal>
+            <span className="section-tag">Digital Growth</span>
+            <h2 className="mb-4 text-3xl font-bold text-heading sm:text-4xl">
+              Beyond the build, a{" "}
+              <span className="text-primary">presence that works.</span>
+            </h2>
+            <p className="max-w-2xl text-muted-foreground">
+              A website performs best when the rest of your digital presence supports it.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {GROWTH_AREAS.map((area, i) => (
+              <Reveal
+                key={area.title}
+                delay={i * 60}
+                className="rounded-xl border border-border bg-card p-7"
+              >
+                <h3 className="mb-2 text-lg font-semibold text-heading">{area.title}</h3>
+                <p className="text-sm text-muted-foreground">{area.body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI creative support */}
+      <section className="site-section">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <Reveal>
+            <span className="section-tag">AI Creative & Marketing</span>
+            <h2 className="mb-4 text-3xl font-bold text-heading sm:text-4xl">
+              Creative support for{" "}
+              <span className="text-primary">how you promote.</span>
+            </h2>
+            <p className="mb-6 max-w-xl text-muted-foreground">
+              We help shape advertisement concepts, captions, short-form scripts and
+              promotional direction — and share a free prompt library you can use today.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/creative-prompts" className={btnPrimary}>
+                Explore AI Creative Prompts
+              </Link>
+              <Link to="/contact" className={btnSecondary}>
+                Contact Painstaking
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {CREATIVE_CAPABILITIES.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2 rounded-xl border border-border bg-card p-5 text-sm text-muted-foreground"
+                >
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
       </section>
 
       {/* Why Painstaking */}
