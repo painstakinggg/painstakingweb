@@ -32,7 +32,7 @@ import { pageMeta } from "@/lib/seo";
 
 const TITLE = "Painstaking Web Development — Premium Websites Built for Business";
 const DESCRIPTION =
-  "A web development studio creating clean, high-converting, mobile-responsive websites and online stores designed to establish authority and drive sales.";
+  "A digital studio building clean, high-converting, mobile-responsive websites and online stores — plus creative and marketing support that strengthens your wider digital presence.";
 
 export const Route = createFileRoute("/")({
   head: () => pageMeta(TITLE, DESCRIPTION),
