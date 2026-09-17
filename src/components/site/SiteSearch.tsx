@@ -10,7 +10,14 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { CONTACT, FAQS, NAV_ITEMS, PROJECTS, SERVICES } from "@/lib/site-data";
+import {
+  CONTACT,
+  CREATIVE_PROMPTS,
+  FAQS,
+  NAV_ITEMS,
+  PROJECTS,
+  SERVICES,
+} from "@/lib/site-data";
 
 type Entry = {
   group: string;
@@ -43,6 +50,13 @@ function buildIndex(): Entry[] {
       hint: `${p.category} — ${p.body}`,
       to: "/portfolio",
       keywords: `${p.title} ${p.category} ${p.body}`,
+    })),
+    ...CREATIVE_PROMPTS.map((p) => ({
+      group: "AI Creative Prompts",
+      label: p.title,
+      hint: `${p.category} — ${p.description}`,
+      to: "/creative-prompts",
+      keywords: `${p.title} ${p.category} ${p.description} ${p.keywords.join(" ")} prompt ai creative marketing`,
     })),
     ...FAQS.map((f) => ({
       group: "FAQ",
@@ -138,7 +152,7 @@ export function SiteSearch({
       )}
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search pages, services, work and FAQs…" />
+        <CommandInput placeholder="Search pages, services, work, prompts and FAQs…" />
         <CommandList>
           <CommandEmpty>No matches found.</CommandEmpty>
           {groups.map((group) => (
