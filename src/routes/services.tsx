@@ -9,9 +9,9 @@ import { SERVICES } from "@/lib/site-data";
 import { btnPrimary, btnSecondary, cardClass } from "@/lib/ui-classes";
 import { pageMeta } from "@/lib/seo";
 
-const TITLE = "Services — Web Design, E-Commerce & Support | Painstaking";
+const TITLE = "Services — Websites, E-Commerce, Growth & Creative | Painstaking";
 const DESCRIPTION =
-  "Explore Painstaking Web Development services: business websites, e-commerce stores, landing pages, SEO foundations, maintenance and custom web applications.";
+  "Explore Painstaking services: business websites, e-commerce stores, landing pages, redesigns, SEO foundations, maintenance, digital presence setup and AI creative support.";
 
 export const Route = createFileRoute("/services")({
   head: () => pageMeta(TITLE, DESCRIPTION),
