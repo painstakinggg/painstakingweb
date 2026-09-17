@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreativePromptsRouteImport } from './routes/creative-prompts'
 import { Route as ECommerceRouteImport } from './routes/e-commerce'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -33,6 +34,11 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreativePromptsRoute = CreativePromptsRouteImport.update({
+  id: '/creative-prompts',
+  path: '/creative-prompts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ECommerceRoute = ECommerceRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creative-prompts': typeof CreativePromptsRoute
   '/e-commerce': typeof ECommerceRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creative-prompts': typeof CreativePromptsRoute
   '/e-commerce': typeof ECommerceRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creative-prompts': typeof CreativePromptsRoute
   '/e-commerce': typeof ECommerceRoute
   '/faq': typeof FaqRoute
   '/portfolio': typeof PortfolioRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creative-prompts'
     | '/e-commerce'
     | '/faq'
     | '/portfolio'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creative-prompts'
     | '/e-commerce'
     | '/faq'
     | '/portfolio'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creative-prompts'
     | '/e-commerce'
     | '/faq'
     | '/portfolio'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CreativePromptsRoute: typeof CreativePromptsRoute
   ECommerceRoute: typeof ECommerceRoute
   FaqRoute: typeof FaqRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creative-prompts': {
+      id: '/creative-prompts'
+      path: '/creative-prompts'
+      fullPath: '/creative-prompts'
+      preLoaderRoute: typeof CreativePromptsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/e-commerce': {
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CreativePromptsRoute: CreativePromptsRoute,
   ECommerceRoute: ECommerceRoute,
   FaqRoute: FaqRoute,
   PortfolioRoute: PortfolioRoute,
