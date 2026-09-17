@@ -51,6 +51,13 @@ function buildIndex(): Entry[] {
       to: "/portfolio",
       keywords: `${p.title} ${p.category} ${p.body}`,
     })),
+    ...CREATIVE_PROMPTS.map((p) => ({
+      group: "AI Creative Prompts",
+      label: p.title,
+      hint: `${p.category} — ${p.description}`,
+      to: "/creative-prompts",
+      keywords: `${p.title} ${p.category} ${p.description} ${p.keywords.join(" ")} prompt ai creative marketing`,
+    })),
     ...FAQS.map((f) => ({
       group: "FAQ",
       label: f.question,
