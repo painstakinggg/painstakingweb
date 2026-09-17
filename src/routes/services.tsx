@@ -47,8 +47,9 @@ function Services() {
         }
       >
         <p>
-          Each service is scoped around a business outcome. Filter the directory below to
-          find the work that matches your goal.
+          From website development and e-commerce to digital growth and AI creative
+          support, each service is scoped around a business outcome. Filter the directory
+          below to find the work that matches your goal.
         </p>
       </PageHero>
 
