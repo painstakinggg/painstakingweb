@@ -152,7 +152,7 @@ export function SiteSearch({
       )}
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Search pages, services, work and FAQs…" />
+        <CommandInput placeholder="Search pages, services, work, prompts and FAQs…" />
         <CommandList>
           <CommandEmpty>No matches found.</CommandEmpty>
           {groups.map((group) => (
