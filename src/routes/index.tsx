@@ -17,7 +17,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS, PLANS, PROCESS, PROJECTS, SERVICES, WHY_US } from "@/lib/site-data";
+import {
+  CREATIVE_CAPABILITIES,
+  FAQS,
+  GROWTH_AREAS,
+  PLANS,
+  PROCESS,
+  PROJECTS,
+  SERVICES,
+  WHY_US,
+} from "@/lib/site-data";
 import { btnPrimary, btnSecondary, cardClass } from "@/lib/ui-classes";
 import { pageMeta } from "@/lib/seo";
 
