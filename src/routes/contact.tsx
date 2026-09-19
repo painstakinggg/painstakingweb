@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle } from "lucide-react";
 
+import { SnapchatIcon } from "@/components/icons/SnapchatIcon";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
@@ -10,7 +11,7 @@ import { pageMeta } from "@/lib/seo";
 
 const TITLE = "Contact — Start a Project | Painstaking Web Development";
 const DESCRIPTION =
-  "Send a structured project enquiry, or reach Painstaking Web Development directly on WhatsApp at +234 810 734 8296 or by email at iagboola10@gmail.com.";
+  "Send a structured project enquiry, or reach Painstaking Web Development directly on WhatsApp at +234 810 734 8296 or by email at painstaking.web@gmail.com.";
 
 export const Route = createFileRoute("/contact")({
   head: () => pageMeta(TITLE, DESCRIPTION),
@@ -83,6 +84,20 @@ function Contact() {
                 <span>
                   <span className="block font-semibold text-heading">Instagram</span>
                   <span className="text-sm text-muted-foreground">@painstaking.web</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={CONTACT.snapchatUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary"
+              >
+                <SnapchatIcon className="size-5 shrink-0 text-primary" />
+                <span>
+                  <span className="block font-semibold text-heading">Snapchat</span>
+                  <span className="text-sm text-muted-foreground">@{CONTACT.snapchatHandle}</span>
                 </span>
               </a>
             </li>

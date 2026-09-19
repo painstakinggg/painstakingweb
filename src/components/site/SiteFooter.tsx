@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle } from "lucide-react";
 
+import { SnapchatIcon } from "@/components/icons/SnapchatIcon";
+
 import { Logo } from "@/components/site/Logo";
 import { CONTACT, NAV_ITEMS, SERVICES } from "@/lib/site-data";
 
@@ -80,6 +82,17 @@ export function SiteFooter() {
               >
                 <Instagram className="size-4" aria-hidden="true" />
                 @painstaking.web
+              </a>
+            </li>
+            <li>
+              <a
+                href={CONTACT.snapchatUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+              >
+                <SnapchatIcon className="size-4" />
+                @{CONTACT.snapchatHandle}
               </a>
             </li>
           </ul>

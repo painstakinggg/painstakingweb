@@ -86,6 +86,13 @@ function buildIndex(): Entry[] {
       href: CONTACT.instagramUrl,
       keywords: "instagram social profile",
     },
+    {
+      group: "Contact",
+      label: "Snapchat",
+      hint: `@${CONTACT.snapchatHandle}`,
+      href: CONTACT.snapchatUrl,
+      keywords: "snapchat social profile",
+    },
   ];
 }
 
