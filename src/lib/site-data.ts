@@ -7,9 +7,11 @@
 export const CONTACT = {
   whatsappNumberDisplay: "+234 810 734 8296",
   whatsappUrl: "https://wa.me/2348107348296",
-  email: "iagboola10@gmail.com",
-  emailUrl: "mailto:iagboola10@gmail.com",
+  email: "painstaking.web@gmail.com",
+  emailUrl: "mailto:painstaking.web@gmail.com",
   instagramUrl: "https://www.instagram.com/painstaking.web?igsi=ZnN3d3BlYXc2YmN2",
+  snapchatHandle: "painstakingg",
+  snapchatUrl: "https://www.snapchat.com/add/painstakingg",
 };
 
 export type NavItem = { to: string; label: string };
