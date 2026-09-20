@@ -141,8 +141,6 @@ export function ContactForm() {
     );
   }
 
-  const submitting = status === "submitting";
-
   return (
     <form
       onSubmit={handleSubmit}
