@@ -68,12 +68,13 @@ export function ContactForm() {
     [values],
   );
 
-  const openWhatsApp = () => {
+  useEffect(() => {
+    if (status !== "success") return;
     const win = window.open(whatsappHandoff, "_blank", "noopener,noreferrer");
     if (!win) {
       window.location.href = whatsappHandoff;
     }
-  };
+  }, [status, whatsappHandoff]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,8 +95,6 @@ export function ContactForm() {
       return;
     }
 
-    setStatus("submitting");
-    openWhatsApp();
     setStatus("success");
   };
 
