@@ -24,9 +24,9 @@ export function Logo({
         <img
           src={logoMark}
           alt=""
-          width={1024}
-          height={1024}
-          className={size === "sm" ? "size-5" : "size-6"}
+          width={1122}
+          height={897}
+          className={size === "sm" ? "h-5 w-auto" : "h-6 w-auto"}
         />
       </span>
       <span className="leading-tight">
