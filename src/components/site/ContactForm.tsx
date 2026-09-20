@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
 
 import { CONTACT, PLANS, SERVICES } from "@/lib/site-data";
