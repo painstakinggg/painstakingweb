@@ -228,11 +228,9 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={submitting}
-        aria-busy={submitting}
-        className={`${btnPrimary} mt-6 w-full disabled:cursor-not-allowed disabled:opacity-60`}
+        className={`${btnPrimary} mt-6 w-full`}
       >
-        {submitting ? "Opening WhatsApp…" : "Send enquiry on WhatsApp"}
+        Send enquiry on WhatsApp
       </button>
       <p className="mt-3 text-xs text-muted-foreground">
         Submissions open a WhatsApp chat pre-filled with your enquiry. No data is stored
