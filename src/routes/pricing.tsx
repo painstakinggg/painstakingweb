@@ -16,17 +16,41 @@ import { pageMeta } from "@/lib/seo";
 
 const TITLE = "Pricing — Website Packages | Painstaking Web Development";
 const DESCRIPTION =
-  "Starter ₦75,000, Professional ₦150,000 and Premium ₦250,000 website packages, plus custom quotes. See included pages, features, revisions and delivery times.";
+  "Starter website packages from ₦150,000, Business packages at ₦250,000 and Premium / Professional builds from ₦500,000+, plus custom quotes. Domains, hosting, third-party APIs and provider charges are billed separately.";
 
 export const Route = createFileRoute("/pricing")({
   head: () => pageMeta(TITLE, DESCRIPTION),
   component: Pricing,
 });
 
+const EXTERNAL_COSTS = [
+  {
+    title: "Domain registration & renewal",
+    body: "Your website address and its yearly renewal are paid separately to the domain registrar.",
+  },
+  {
+    title: "Hosting & infrastructure",
+    body: "Hosting plans, server resources, storage, bandwidth or other infrastructure charges are separate wherever they apply.",
+  },
+  {
+    title: "Third-party APIs & services",
+    body: "API subscriptions, usage-based charges, credits and external platform fees are not included in the website development price.",
+  },
+  {
+    title: "Payment processing",
+    body: "Transaction and processing fees charged by payment providers such as Paystack are paid separately to the provider.",
+  },
+  {
+    title: "Premium tools & licences",
+    body: "Paid plugins, themes, software licences and other optional third-party tools are billed separately.",
+  },
+];
+
 const NOTES = [
-  "Prices are for the build itself. Hosting, domain and third-party service fees are paid to those providers — we assist with setup.",
+  "Package prices cover the agreed website design and development work only. External services and provider charges are separate payments.",
+  "Where possible, you pay the relevant provider directly and retain ownership of your accounts. We can help with selection, setup, configuration and integration.",
   "Content (text, images, product details) is supplied by you; we advise on what is needed and how to structure it.",
-  "Additional pages, features or revision rounds beyond a package are quoted before any extra work begins.",
+  "Additional pages, features or revision rounds beyond a package are quoted and approved before any extra work begins.",
 ];
 
 const pricingFaqs = FAQS.filter((f) => f.category === "Pricing");
@@ -50,8 +74,10 @@ function Pricing() {
         }
       >
         <p>
-          Package pricing from the current Painstaking price list. Anything outside a
-          package is scoped and quoted after a discovery conversation.
+          Choose a package based on the size and complexity of your project. Anything
+          outside a package is scoped and quoted after a discovery conversation.
+          Package prices cover our development work; domain, hosting, API and other
+          third-party costs are separate.
         </p>
       </PageHero>
 
@@ -61,7 +87,7 @@ function Pricing() {
             <Reveal
               key={plan.name}
               delay={i * 60}
-              className={`relative flex flex-col rounded-xl border bg-card p-7 transition-transform duration-300 hover:-translate-y-1 ${
+              className={`motion-card relative flex flex-col rounded-xl border bg-card p-7 transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-glow ${
                 plan.featured ? "border-primary shadow-glow" : "border-border"
               }`}
             >
@@ -99,18 +125,53 @@ function Pricing() {
       <section className="border-y border-border bg-surface/40">
         <div className="site-section">
           <Reveal>
+            <span className="section-tag">Separate Provider Costs</span>
+            <h2 className="mb-4 text-2xl font-bold text-heading sm:text-3xl">
+              What is paid separately?
+            </h2>
+            <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
+              These costs are not part of the website package price. They depend on
+              the providers and services selected for your project, and may be
+              recurring or usage-based.
+            </p>
+          </Reveal>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {EXTERNAL_COSTS.map((item, i) => (
+              <Reveal
+                key={item.title}
+                delay={i * 50}
+                className="motion-card rounded-xl border border-border bg-card p-6"
+              >
+                <h3 className="mb-2 text-base font-semibold text-heading">{item.title}</h3>
+                <p className="text-sm leading-6 text-muted-foreground">{item.body}</p>
+              </Reveal>
+            ))}
+          </div>
+          <p className="mt-6 rounded-lg border border-border bg-card p-4 text-sm leading-6 text-muted-foreground">
+            <strong className="text-heading">How payment works:</strong> Wherever
+            possible, clients pay the relevant third-party provider directly and
+            retain ownership of their accounts. Painstaking Web can assist with
+            choosing, setting up and integrating these services. Any service
+            management or setup fee will be discussed and approved separately.
+          </p>
+        </div>
+      </section>
+
+      <section className="site-section">
+        <div>
+          <Reveal>
             <span className="section-tag">Good To Know</span>
             <h2 className="mb-4 text-2xl font-bold text-heading sm:text-3xl">
-              What the prices include.
+              What the package price covers.
             </h2>
           </Reveal>
-          <ul className="mt-6 grid gap-4 lg:grid-cols-3">
+          <ul className="mt-6 grid gap-4 lg:grid-cols-2">
             {NOTES.map((note, i) => (
               <Reveal
                 key={note}
                 delay={i * 60}
                 as="li"
-                className="rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground"
+                className="motion-card rounded-xl border border-border bg-card p-6 text-sm text-muted-foreground"
               >
                 {note}
               </Reveal>
